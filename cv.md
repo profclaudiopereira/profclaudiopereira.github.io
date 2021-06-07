@@ -5,6 +5,7 @@ layout: resume
 
 http://lattes.cnpq.br/1664564388726543
 ![online](http://lattes.cnpq.br/1664564388726543)
+<!-- A list is also available [online](http://lattes.cnpq.br/1664564388726543) -->
 
 Current Position Description
 
@@ -47,7 +48,7 @@ Book Title, Journal Title
 ## Presentations
 
 `1994`
-Presentation Title, Conference, <a href="https://MyWebsite.tld/presentation1">Link to Presentation</a>
+Presentation Title, Conference, <a href="http://lattes.cnpq.br/1664564388726543">Link to Presentation</a>
 
 
 ## Occupation
