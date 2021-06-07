@@ -3,7 +3,7 @@ layout: page
 excerpt: "About Me..."
 ---
 
-I am a academic, hear me roar. I am an Assistant Professor at Oregon Health & Science University.
+Sou físico e engenherio eletrônico. Atualmente professor da UNIFACOL e UNIPÊ.
 
 ## Current Interests and Projects:
 
