@@ -1,6 +1,6 @@
 # Site wide configuration
 
-title: Website - profº Cláudio Pereira
+title: Website - prof. Cláudio Pereira
 locale: pt_BR
 logo: # filename of a logo image that has been placed into your images directory
 
@@ -11,9 +11,9 @@ owner:
   bio: "This is a sample Jekyll academic website."
   email: profclaudiosilva@gmail.com
   # Do not include the @ symbol in your Twitter username
-  twitter: laderast
+  twitter: profcpsilva
   linkedin: #username
-  github: laderast
+  github: profclaudiopereira
   orcid: # ID Number (ex. 0000-0000-0000-0000)
   researchgate: #username
   mendeley: #username
