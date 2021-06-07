@@ -4,6 +4,6 @@ title: Workshops
 excerpt: "Recent Workshops"
 ---
 
-# Workshops I've Put Together
+# Arquiteturas de projetos IoT
 
-- [GitHub Pages Workshop](https://github.com/BioData-Club/githubPagesTutorial)
+- [GitHub Pages Workshop](https://profclaudiopereira.github.io/ArquiteturasdeProjetosIoT/)
