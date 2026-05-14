@@ -1,347 +1,369 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Claudio Pereira | Embedded AI Lab</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, Helvetica, sans-serif;
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Open Edge AI Labs</title>
 
-    body {
-      background: #0b1020;
-      color: #e5e7eb;
-      line-height: 1.6;
-    }
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
+body {
+  background: #0b1020;
+  color: #e5e7eb;
+  line-height: 1.6;
+}
 
-    header {
-      position: sticky;
-      top: 0;
-      background: rgba(11, 16, 32, 0.95);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid #1f2937;
-      z-index: 1000;
-    }
+a {
+  text-decoration: none;
+  color: inherit;
+}
 
-    nav {
-      max-width: 1200px;
-      margin: auto;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+header {
+  position: sticky;
+  top: 0;
+  background: rgba(11,16,32,0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #1f2937;
+  z-index: 1000;
+}
 
-    nav h1 {
-      color: #60a5fa;
-      font-size: 1.2rem;
-    }
+nav {
+  max-width: 1200px;
+  margin: auto;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 1.5rem;
-    }
+nav h1 {
+  color: #60a5fa;
+}
 
-    nav ul li a:hover {
-      color: #60a5fa;
-    }
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
 
-    .hero {
-      min-height: 90vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 2rem;
-      background:
-        radial-gradient(circle at top right, rgba(96, 165, 250, 0.15), transparent 30%),
-        radial-gradient(circle at bottom left, rgba(34, 211, 238, 0.1), transparent 30%),
-        #0b1020;
-    }
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  background:
+    radial-gradient(circle at top right, rgba(96,165,250,0.15), transparent 30%),
+    radial-gradient(circle at bottom left, rgba(34,211,238,0.1), transparent 30%),
+    #0b1020;
+}
 
-    .hero-content {
-      max-width: 900px;
-    }
+.hero-content {
+  max-width: 1200px;
+}
 
-    .hero h2 {
-      font-size: 3.5rem;
-      margin-bottom: 1rem;
-      color: #f9fafb;
-    }
+.hero h2 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+}
 
-    .hero p {
-      font-size: 1.3rem;
-      color: #9ca3af;
-      margin-bottom: 2rem;
-    }
+.hero p {
+  font-size: 1.3rem;
+  color: #9ca3af;
+  margin-bottom: 2rem;
+}
 
-    .hero-buttons {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
+.hero-banner {
+  width: 100%;
+  border-radius: 24px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  border: 1px solid #1f2937;
+}
 
-    .btn {
-      padding: 0.9rem 1.6rem;
-      border-radius: 12px;
-      font-weight: bold;
-      transition: 0.3s ease;
-      border: 1px solid #374151;
-    }
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
 
-    .btn-primary {
-      background: #2563eb;
-      color: white;
-    }
+.btn {
+  padding: 0.9rem 1.6rem;
+  border-radius: 12px;
+  font-weight: bold;
+  border: 1px solid #374151;
+}
 
-    .btn-primary:hover {
-      background: #1d4ed8;
-    }
+.btn-primary {
+  background: #2563eb;
+  color: white;
+}
 
-    .btn-secondary {
-      background: transparent;
-    }
+.btn-secondary {
+  background: transparent;
+}
 
-    .btn-secondary:hover {
-      background: #111827;
-    }
+section {
+  max-width: 1200px;
+  margin: auto;
+  padding: 5rem 2rem;
+}
 
-    section {
-      max-width: 1200px;
-      margin: auto;
-      padding: 5rem 2rem;
-    }
+.section-title {
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+  color: #60a5fa;
+}
 
-    .section-title {
-      font-size: 2.2rem;
-      margin-bottom: 2rem;
-      color: #60a5fa;
-    }
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
 
-    .about {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      align-items: center;
-    }
+.card {
+  background: #111827;
+  border: 1px solid #1f2937;
+  border-radius: 20px;
+  padding: 2rem;
+}
 
-    .card-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-    }
+.card h3 {
+  margin-bottom: 1rem;
+}
 
-    .card {
-      background: #111827;
-      border: 1px solid #1f2937;
-      border-radius: 20px;
-      padding: 2rem;
-      transition: 0.3s ease;
-    }
+.card p {
+  color: #9ca3af;
+}
 
-    .card:hover {
-      transform: translateY(-5px);
-      border-color: #60a5fa;
-    }
+.projects .card a {
+  display: inline-block;
+  margin-top: 1rem;
+  color: #60a5fa;
+  font-weight: bold;
+}
 
-    .card h3 {
-      color: #f9fafb;
-      margin-bottom: 1rem;
-    }
+.footer {
+  border-top: 1px solid #1f2937;
+  text-align: center;
+  padding: 2rem;
+  color: #6b7280;
+}
 
-    .card p {
-      color: #9ca3af;
-    }
+@media (max-width: 768px) {
+  .hero h2 {
+    font-size: 2.5rem;
+  }
 
-    .projects .card a {
-      display: inline-block;
-      margin-top: 1rem;
-      color: #60a5fa;
-      font-weight: bold;
-    }
+  nav {
+    flex-direction: column;
+    gap: 1rem;
+  }
 
-    .footer {
-      border-top: 1px solid #1f2937;
-      text-align: center;
-      padding: 2rem;
-      color: #6b7280;
-    }
-
-    @media (max-width: 768px) {
-      .hero h2 {
-        font-size: 2.5rem;
-      }
-
-      nav {
-        flex-direction: column;
-        gap: 1rem;
-      }
-
-      nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-    }
-  </style>
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+</style>
 </head>
+
 <body>
 
 <header>
-  <nav>
-    <h1>Embedded AI Lab</h1>
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#research">Research</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+<nav>
+<h1>Open Edge AI Labs</h1>
+
+<ul>
+<li><a href="#ecosystem">Ecosystem</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#architecture">Architecture</a></li>
+<li><a href="#technologies">Technologies</a></li>
+</ul>
+</nav>
 </header>
 
 <section class="hero">
-  <div class="hero-content">
-    <h2>Embedded AI • Edge Computing • Intelligent IoT</h2>
-    <p>
-      Researching Embedded Intelligence, Hybrid AI Architectures and Intelligent Connected Systems.
-    </p>
 
-    <div class="hero-buttons">
-      <a class="btn btn-primary" href="https://github.com/profclaudiopereira" target="_blank">
-        GitHub Profile
-      </a>
+<div class="hero-content">
 
-      <a class="btn btn-secondary" href="#projects">
-        Featured Projects
-      </a>
-    </div>
-  </div>
+<h2>Open Edge AI Labs</h2>
+
+<img src="images/open-edge-ai-labs-banner.png"
+     alt="Open Edge AI Labs"
+     class="hero-banner">
+
+<p>
+Educational Open-Source Ecosystem for:
+Embedded AI • Edge Computing • Hybrid LLM Architectures • Robotics • Intelligent IoT Systems
+</p>
+
+<div class="hero-buttons">
+
+<a class="btn btn-primary"
+   href="https://github.com/profclaudiopereira"
+   target="_blank">
+GitHub Profile
+</a>
+
+<a class="btn btn-secondary"
+   href="#projects">
+Explore Ecosystem
+</a>
+
+</div>
+</div>
 </section>
 
-<section id="about">
-  <h2 class="section-title">About</h2>
+<section id="ecosystem">
 
-  <div class="about">
-    <div>
-      <p>
-        Claudio Pereira is an Embedded AI Researcher with a multidisciplinary background in Computer Science,
-        Electronic Engineering and Physics.
-      </p>
+<h2 class="section-title">Open Edge AI Labs Ecosystem</h2>
 
-      <br>
+<div class="card-grid">
 
-      <p>
-        His work focuses on Embedded Systems, Edge AI, Hybrid AI Architectures,
-        ESP32/STM32 platforms, intelligent IoT devices and constrained computing environments.
-      </p>
-    </div>
+<div class="card">
+<h3>Embedded AI</h3>
+<p>
+Research and development of intelligent embedded systems using ESP32, STM32 and constrained edge devices.
+</p>
+</div>
 
-    <div class="card">
-      <h3>Academic Background</h3>
-      <p>• M.Sc. in Computer Science — CIn/UFPE</p>
-      <p>• B.Sc. in Electronic Engineering — UPE</p>
-      <p>• B.Sc. in Physics — UFRPE</p>
-    </div>
-  </div>
-</section>
+<div class="card">
+<h3>Hybrid AI Architectures</h3>
+<p>
+Cloud + Local AI systems combining OpenAI, Ollama, Qwen and distributed runtime architectures.
+</p>
+</div>
 
-<section id="research">
-  <h2 class="section-title">Research Areas</h2>
+<div class="card">
+<h3>Conversational Robotics</h3>
+<p>
+Educational robotics focused on voice interaction, embodied AI and hybrid intelligence systems.
+</p>
+</div>
 
-  <div class="card-grid">
-    <div class="card">
-      <h3>Embedded AI</h3>
-      <p>AI solutions for constrained embedded environments and intelligent edge devices.</p>
-    </div>
+<div class="card">
+<h3>Edge Computing</h3>
+<p>
+Runtime architectures and intelligent orchestration for IoT and distributed systems.
+</p>
+</div>
 
-    <div class="card">
-      <h3>Hybrid AI</h3>
-      <p>Distributed AI architectures combining cloud intelligence and local inference.</p>
-    </div>
-
-    <div class="card">
-      <h3>IoT Architectures</h3>
-      <p>Research on scalable and intelligent IoT communication systems.</p>
-    </div>
-
-    <div class="card">
-      <h3>Edge Computing</h3>
-      <p>Runtime architectures for intelligent distributed edge systems.</p>
-    </div>
-  </div>
+</div>
 </section>
 
 <section id="projects" class="projects">
-  <h2 class="section-title">Featured Projects</h2>
 
-  <div class="card-grid">
+<h2 class="section-title">Featured Projects</h2>
 
-    <div class="card">
-      <h3>LLM IoT Thin Edge</h3>
-      <p>
-        Hybrid AI and Edge Computing experiments for constrained IoT devices.
-      </p>
-      <a href="https://github.com/profclaudiopereira/llm-iot-thin-edge" target="_blank">
-        View Repository →
-      </a>
-    </div>
+<div class="card-grid">
 
-    <div class="card">
-      <h3>M5Stack Experiments</h3>
-      <p>
-        Embedded systems experiments using M5Stack ecosystem and ESP-IDF.
-      </p>
-      <a href="https://github.com/profclaudiopereira" target="_blank">
-        Explore Projects →
-      </a>
-    </div>
+<div class="card">
+<h3>Open AI Robot Lab</h3>
 
-    <div class="card">
-      <h3>ESP32 Firmware Studies</h3>
-      <p>
-        Technical studies and firmware development for ESP32 platforms.
-      </p>
-      <a href="https://github.com/profclaudiopereira" target="_blank">
-        View More →
-      </a>
-    </div>
+<p>
+Educational AI robotics platform using ESP32-S3, voice interfaces, hybrid LLM architectures and 3D printable robotics.
+</p>
 
-  </div>
+<a href="https://github.com/profclaudiopereira/open-ai-robot-lab"
+target="_blank">
+View Repository →
+</a>
+</div>
+
+<div class="card">
+<h3>StackChan Edge AI Lab</h3>
+
+<p>
+Experiments with embodied AI, conversational robotics and hybrid intelligence using the StackChan ecosystem.
+</p>
+
+<a href="https://github.com/profclaudiopereira/stackchan-edge-ai-lab"
+target="_blank">
+View Repository →
+</a>
+</div>
+
+<div class="card">
+<h3>LLM IoT Thin Edge</h3>
+
+<p>
+Hybrid Edge AI infrastructure for intelligent IoT devices, runtime orchestration and distributed AI systems.
+</p>
+
+<a href="https://github.com/profclaudiopereira/llm-iot-thin-edge"
+target="_blank">
+View Repository →
+</a>
+</div>
+
+</div>
 </section>
 
-<section id="contact">
-  <h2 class="section-title">Contact</h2>
+<section id="architecture">
 
-  <div class="card-grid">
-    <div class="card">
-      <h3>GitHub</h3>
-      <p>github.com/profclaudiopereira</p>
-    </div>
+<h2 class="section-title">Global Architecture Vision</h2>
 
-    <div class="card">
-      <h3>Research</h3>
-      <p>Embedded AI • IoT • Edge Computing</p>
-    </div>
+<div class="card">
 
-    <div class="card">
-      <h3>Location</h3>
-      <p>Brazil</p>
-    </div>
-  </div>
+<h3>Open Edge AI Labs Architecture</h3>
+
+<p>
+Devices → Edge Runtime → Hybrid LLM → Conversational Robotics → Autonomous Systems
+</p>
+
+<br>
+
+<p>
+The ecosystem explores modern distributed AI architectures combining embedded systems,
+local inference, cloud intelligence and intelligent robotics.
+</p>
+
+</div>
+</section>
+
+<section id="technologies">
+
+<h2 class="section-title">Technologies</h2>
+
+<div class="card-grid">
+
+<div class="card">
+<h3>Hardware Platforms</h3>
+<p>ESP32 • STM32 • M5Stack • Edge Devices</p>
+</div>
+
+<div class="card">
+<h3>AI Platforms</h3>
+<p>OpenAI • Ollama • Qwen • Hybrid AI</p>
+</div>
+
+<div class="card">
+<h3>Protocols</h3>
+<p>MQTT • WebSocket • REST • Streaming APIs</p>
+</div>
+
+<div class="card">
+<h3>Software Stack</h3>
+<p>Python • FastAPI • ESP-IDF • PlatformIO</p>
+</div>
+
+</div>
 </section>
 
 <footer class="footer">
-  <p>© 2026 Claudio Pereira — Embedded AI Lab</p>
+<p>
+© 2026 Claudio Pereira — Open Edge AI Labs
+</p>
 </footer>
 
 </body>
