@@ -5,12 +5,12 @@
 
 index.html
 /images
-  open-edge-ai-labs-banner.png
+  open-edge-ai-labs-bannerv2.png
 
 ## Instructions
 
 1. Put your ecosystem banner inside:
-   images/open-edge-ai-labs-banner.png
+   images/open-edge-ai-labs-bannerv2.png
 
 2. Upload all files to your GitHub Pages repository.
 
